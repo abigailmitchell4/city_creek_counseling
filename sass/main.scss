@@ -17,7 +17,7 @@
 * {
   margin: 0 auto;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Gothic A1', sans-serif;
 }
 
 body {
@@ -32,6 +32,16 @@ main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.flex-c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-r {
+  display: flex;
 }
 
 .image {
@@ -73,7 +83,7 @@ a:link {
 }
 
 a:visited {  
-  color: inherit;
+  color:#0f919e;
   text-decoration: none;
 }
 #home-icon {
@@ -90,8 +100,6 @@ a:visited {
   align-items: center;
 }
 h1 {
-  // font-family: 'Bellefair', serif;
-  // font-family: 'Lancelot', sans-serif;
   color:#0f919e;
   font-family: 'Lancelot', sans-serif;
   margin: 1rem 1rem 5rem;
@@ -99,7 +107,6 @@ h1 {
   font-weight: 300;
   text-align: center;
   width: fit-content;
-  // text-transform: uppercase;
 
   @include respond(phone) {
     font-size: 2rem;
@@ -118,49 +125,126 @@ h1 {
   }
 }
 
+h2, button {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 200;
+  border-style: solid;
+  width: fit-content;
+  padding: 10px 20px;
+  border-width: 2px;
+}
+
+h3 {
+  letter-spacing: 2px;
+  margin: 2rem 0 1rem;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 200;
+  width: fit-content;
+}
+
 .intro-p {
-  display: flex;
-  flex-direction: column;
   line-height: 1.5;
-  color: #6d6d6d;
-  // background-color: #9bc0b6;
-  padding: 2rem;
+  letter-spacing: 1px;
   width: 100%;
-  margin: 1rem 0;
-  background-color: #d9ebe5;
-
-  @include respond(phone) {
-    font-size: 1rem;
-  }
-
-  @include respond(tab-port) {
-    font-size: 1.2rem;
-  }
-
-  @include respond(tab-land) {
-    font-size: 1.3rem;
-  }
+  font-weight: 300;
 
   @include respond(big-desk) {
     font-size: 1.4rem;
   }
-  .p-container {
-    width: 60%;
-    display: flex;
-    border-left-style: solid;
-    flex-direction: column;
-    border-right-style: solid;
-    border-width: 1px;
-    border-color: #0f919e;
+  @include respond(tab-land) {
+    font-size: 1.3rem;
+  }
+  @include respond(tab-port) {
+    font-size: 1.2rem;
+  }
+  @include respond(phone) {
+    font-size: 1rem;
   }
   p {
     margin: 1rem 3rem;
-    font-family: 'Gothic A1', sans-serif;
+    text-align: center;
+  }
+  .p-container {
+    width: 60%;
+    margin-bottom: 2rem;
+  }
+
+  .p-border {
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 1px;
   }
 
   .ph-2 {
-    font-size: 2.5rem;
-    align-self: flex-end;
-    font-family: 'Lancelot', sans-serif;
+    font-size: 2.2rem;
+  }
+  .l {
+    text-align: left;
+    margin: 1rem 0;
+  }
+  .padding {
+    padding: 2rem;
   }
 }
+
+.header-container {
+  display: flex;
+  align-items: center;
+  margin: 3rem 0 1rem;
+}
+.who-header {
+  margin: 0 1rem;
+  color: #4f4f4f;
+}
+.hello-container {
+  align-items: flex-start;
+  margin: 1rem 2rem 0;
+}
+.h3-intro-name {
+  color: #0f919e;
+}
+// svg {
+//   width: 500px;
+//   height: 5px;
+//   stroke-width: 2px;
+//   stroke: #000;
+//   position: relative;
+// }
+.g {
+  background-color: #90baac;
+  color: #fff;
+}
+.sm-width {
+  width: 90%;
+  color: #4f4f4f;
+  max-width: 1200px;
+}
+
+.image-container {
+  margin:3rem;
+}
+
+.learn-btn {
+  font-size: 1.2rem;
+  width: 200px;
+  border-color: transparent;
+}
+.learn-btn {
+  a, 
+  a:visited {
+    color: #fff;
+  }
+}
+.learn-btn:hover {
+  a {
+    color: #90baac;
+  }
+  border-color: #90baac;
+  background-color: #fff;
+}
+

@@ -269,6 +269,9 @@ h3 {
   background-color: #90baac;
   color: #fff; }
 
+.g2 {
+  color: #90baac; }
+
 .sm-width {
   width: 90%;
   color: #4f4f4f;
@@ -293,3 +296,6 @@ h3 {
   transition-duration: 0.3s; }
   .learn-btn:hover a {
     color: #90baac; }
+
+.margin {
+  margin: 5rem; }

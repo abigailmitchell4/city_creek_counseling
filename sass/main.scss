@@ -3,6 +3,9 @@
   @if $breakpoint == phone {
     @media (max-width: 600px) { @content };
   }
+  @if $breakpoint == tab-small {
+    @media (max-width: 750px) { @content };
+  }
   @if $breakpoint == tab-port {
     @media (max-width: 900px) { @content };
   }
@@ -14,6 +17,9 @@
   }
 }
 
+$animate: all 0.1s ease-in-out;
+$animate-long: all 1s ease-in-out;
+
 * {
   margin: 0 auto;
   box-sizing: border-box;
@@ -21,7 +27,6 @@
 }
 
 body {
-  // 1rem = 
   font-size: 62.5%;
   display: flex;
   flex-direction: column;
@@ -39,11 +44,13 @@ main {
   flex-direction: column;
   align-items: center;
 }
-
 .flex-r {
   display: flex;
-}
 
+  @include respond(tab-small) {
+    flex-direction: column;
+  }
+}
 .image {
   max-width: 800px;
   display: flex;
@@ -51,7 +58,8 @@ main {
   position: absolute;
   z-index: -1;
 }
-nav {
+
+.menu {
   position: fixed;
   display: flex;
   justify-content: space-around;
@@ -60,8 +68,12 @@ nav {
   letter-spacing: 2px;
   align-items: center;
   font-family: 'Gothic A1', sans-serif;
-  // background-color: #e9e9e9;
   background-color: #fff;
+
+  @include respond(phone) {
+    display: none;
+  }
+
 }
 ul {
   width: 100%;
@@ -72,11 +84,16 @@ ul {
   display: flex;
   align-items: center;
 }
+
 li a {
   color:#0f919e;
   font-size: 1rem;
   text-transform: uppercase;
   text-decoration: none;
+
+  @include respond(phone) {
+    font-size: 2rem;
+  }
 }
 a:link {
   text-decoration: none;
@@ -88,7 +105,107 @@ a:visited {
 }
 #home-icon {
   fill: #0f919e;
-  // fill: #fff;
+
+  @include respond(phone) {
+    width: 40px;
+    height: 40px;
+  }  
+}
+
+.hover {
+  transition: $animate;
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 0px;
+    height: 2px;
+    margin: 5px 0 0;
+    transition: $animate;
+    transition-duration: 0.4s;
+    opacity: 0;
+    background-color: #0f919e;
+  }
+  &.underline {
+    &:before {
+      left: 50%;
+    }
+    &:after {
+      right: 50%;
+    }
+  }
+}
+
+.hover:hover {
+  &:before,
+  &:after {
+    width: 100%;
+    opacity: 1;
+  }
+  &.underline {
+    &:before,
+    &:after {
+      width: 50%;
+    }
+  }
+}
+.menu-mobile {
+  display: none;
+  @include respond(phone) {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #fff;
+    z-index: 999;
+
+    ul {
+      flex-direction: column;
+    }
+
+    #menu-btn {
+      margin: 1rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #0f919e;
+      background-color: inherit;
+    }
+  }
+}
+.nav-menu-mobile {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: 320px;
+  position: relative;
+  width: 100%;
+
+  ul {
+    justify-content: space-around;
+    height: 100%;
+    padding: 1rem;
+  }
+}
+.close:after {
+  content: '';
+  height: 60px;
+  border-left: 2px solid gray;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 28px;
+  margin: 15px;
+}
+
+.close:before {
+  content: '';
+  height: 60px;
+  border-left: 2px solid gray;
+  position: absolute;
+  transform: rotate(-45deg);
+  right: 28px;
+  margin: 15px;
 }
 
 .main-home-container {
@@ -108,34 +225,38 @@ h1 {
   text-align: center;
   width: fit-content;
 
-  @include respond(phone) {
-    font-size: 2rem;
-  }
-
-  @include respond(tab-port) {
-    font-size: 4rem;
-  }
-
-  @include respond(tab-land) {
-    font-size: 4rem;
-  }
-
   @include respond(big-desk) {
     font-size: 7rem;
   }
+  @include respond(tab-land) {
+    font-size: 4rem;
+  }
+  @include respond(tab-port) {
+    font-size: 4rem;
+    margin: 5rem 0;
+  }
 }
 
-h2, button {
+h2, 
+button {
+  font-size: 2rem;
+}
+h2, 
+button, 
+#menu-btn {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 2rem 0;
   text-align: center;
-  font-size: 2.4rem;
   font-weight: 200;
   border-style: solid;
   width: fit-content;
   padding: 10px 20px;
   border-width: 2px;
+
+  @include respond(tab-small) {
+    font-size: 2rem;
+  }
 }
 
 h3 {
@@ -172,6 +293,11 @@ h3 {
   .p-container {
     width: 60%;
     margin-bottom: 2rem;
+
+    @include respond(tab-small) {
+      width: 85%;
+    }
+
   }
 
   .p-border {
@@ -208,13 +334,6 @@ h3 {
 .h3-intro-name {
   color: #0f919e;
 }
-// svg {
-//   width: 500px;
-//   height: 5px;
-//   stroke-width: 2px;
-//   stroke: #000;
-//   position: relative;
-// }
 .g {
   background-color: #90baac;
   color: #fff;
@@ -241,10 +360,13 @@ h3 {
   }
 }
 .learn-btn:hover {
+  border-color: #90baac;
+  background-color: #fff;
+  transition: $animate;
+  transition-duration: 0.3s;
+
   a {
     color: #90baac;
   }
-  border-color: #90baac;
-  background-color: #fff;
 }
 

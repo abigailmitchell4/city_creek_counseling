@@ -1,5 +1,8 @@
 // MEDIA QUERY MANAGER
 @mixin respond($breakpoint) {
+  @if $breakpoint == phone-small {
+    @media (max-width: 350px) { @content };
+  }
   @if $breakpoint == phone {
     @media (max-width: 600px) { @content };
   }
@@ -39,6 +42,9 @@ main {
   min-height: 100vh;
 }
 
+
+//////////////////////////////
+// GENERAL FLEX CONTAINERS //
 .flex-c {
   display: flex;
   flex-direction: column;
@@ -46,18 +52,53 @@ main {
 }
 .flex-r {
   display: flex;
+  width: 100%;
+  align-items: center;
 
   @include respond(tab-small) {
     flex-direction: column;
   }
 }
-.image {
-  max-width: 800px;
-  display: flex;
-  flex: 1 1 auto;
-  position: absolute;
-  z-index: -1;
+.flex-l {
+  align-items: flex-start;
+  width: 100%;
 }
+
+
+/////////////////////
+// GENERAL CLASSES //
+.b2 {
+  color: #0f919e;
+}
+.g {
+  background-color: #90baac;
+  color: #fff;
+}
+.g2 {
+  color: #90baac;
+}
+.b {
+  background-color: #11909e;
+  color: white;
+}
+.margin-top-1 {
+  margin: 1rem 0;
+}
+.width-90 {
+  width: 90%;
+  color: #4f4f4f;
+  max-width: 1200px;
+}
+.width-sm {
+  width: 65%;
+
+  @include respond(tab-port) {
+    width: 85%;
+  }
+}
+
+///////////////////
+// NAV MENU //
 
 .menu {
   position: fixed;
@@ -207,11 +248,13 @@ a:visited {
   margin: 15px;
 }
 
+//////////////////////////
+// HOME PAGE //
+
 .main-home-container {
   margin-top: 10%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 15%;
   width: 100vw;
   align-items: center;
 }
@@ -280,12 +323,15 @@ h3 {
     font-size: 1.3rem;
   }
   @include respond(tab-port) {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   @include respond(phone) {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
-  p {
+  @include respond(phone-small) {
+    font-size: 1.2rem;
+  }
+  .ph-1 {
     margin: 1rem 3rem;
     text-align: center;
   }
@@ -330,21 +376,6 @@ h3 {
   align-items: flex-start;
   margin: 1rem 2rem 0;
 }
-.h3-intro-name {
-  color: #0f919e;
-}
-.g {
-  background-color: #90baac;
-  color: #fff;
-}
-.g2 {
-  color: #90baac;
-}
-.sm-width {
-  width: 90%;
-  color: #4f4f4f;
-  max-width: 1200px;
-}
 
 .image-container {
   margin:3rem;
@@ -373,8 +404,92 @@ h3 {
 }
 
 
-
+//////////////////
 //// ABOUT /////
+
 .margin {
   margin: 5rem;
+}
+
+/////////////////////
+///// CONTACT /////
+
+.in-touch-header {
+  @include respond(tab-small) {
+    margin-top: 4rem;
+  }
+}
+
+.main-contact-container {
+  margin-top: 2rem;
+  width: 100%;
+  background-color: #11909e;
+  color: white;
+}
+
+.contact-container { 
+  margin: 2rem; 
+
+  p {
+    margin: 1rem 0;
+  }
+}
+.p-1 {
+  font-size: 1.7rem;
+
+  @include respond(tab-small) {
+    text-align: center;
+  }
+}
+.contact {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.contact-meta {
+  margin-right: 1rem;
+}
+
+.contact-btn {
+  height: fit-content;
+  font-size: 1.5rem;
+  border-color: inherit;
+  align-self: center;
+  margin: 1rem;
+
+  a,
+  a:visited {
+    color: inherit;
+  }
+
+  @include respond(tab-small) {
+    margin-bottom: 2rem;
+  }
+}
+
+.contact-btn:hover {
+  border-color: #11909e;
+  background-color: #fff;
+  transition: $animate;
+  transition-duration: 0.3s;
+
+  a {
+    color: #11909e;
+  }
+}
+
+.location {
+  margin: 1rem 0;
+  align-items: flex-start;
+}
+
+///////////////////
+// CONTACT ICONS // 
+#phone-icon,
+#mail-icon,
+#location-icon
+{
+  fill: #fff;
+  margin: 1rem 2rem;
+  height: 32px;
+  width: 32px;
 }

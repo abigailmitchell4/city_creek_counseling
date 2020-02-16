@@ -321,6 +321,8 @@ h3 {
   max-width: 700px; }
   .contact-container p {
     margin: 1rem 0; }
+  .contact-container p:link, .contact-container p:visited {
+    color: inherit; }
 
 .p-1 {
   font-size: 1.7rem; }

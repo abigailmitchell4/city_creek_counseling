@@ -426,6 +426,10 @@ h3 {
   p {
     margin: 1rem 0;
   }
+
+  p:link, p:visited {
+    color: inherit;
+  }
 }
 .p-1 {
   font-size: 1.7rem;

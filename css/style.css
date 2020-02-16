@@ -304,7 +304,7 @@ h3 {
   color: #fff; }
 
 .learn-btn:hover {
-  border-color: #90baac;
+  border-color: transparent;
   background-color: #fff;
   transition: all 0.1s ease-in-out;
   transition-duration: 0.3s; }
@@ -314,9 +314,11 @@ h3 {
 .margin {
   margin: 5rem; }
 
-@media (max-width: 750px) {
-  .in-touch-header {
-    margin-top: 4rem; } }
+.in-touch-header {
+  margin-top: 3rem; }
+  @media (max-width: 750px) {
+    .in-touch-header {
+      margin-top: 4rem; } }
 
 .main-contact-container {
   margin-top: 2rem;
@@ -356,7 +358,7 @@ h3 {
       margin-bottom: 2rem; } }
 
 .contact-btn:hover {
-  border-color: #11909e;
+  border-color: transparent;
   background-color: #fff;
   transition: all 0.1s ease-in-out;
   transition-duration: 0.3s; }
@@ -370,7 +372,13 @@ h3 {
 #phone-icon,
 #mail-icon,
 #location-icon {
-  fill: #fff;
   margin: 1rem 2rem;
   height: 32px;
   width: 32px; }
+
+.fill-w {
+  fill: #fff; }
+
+.bw {
+  background-color: #fff;
+  color: #000; }

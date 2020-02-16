@@ -393,7 +393,7 @@ h3 {
   }
 }
 .learn-btn:hover {
-  border-color: #90baac;
+  border-color: transparent;
   background-color: #fff;
   transition: $animate;
   transition-duration: 0.3s;
@@ -415,6 +415,8 @@ h3 {
 ///// CONTACT /////
 
 .in-touch-header {
+  margin-top: 3rem;
+
   @include respond(tab-small) {
     margin-top: 4rem;
   }
@@ -467,7 +469,7 @@ h3 {
 }
 
 .contact-btn:hover {
-  border-color: #11909e;
+  border-color: transparent;
   background-color: #fff;
   transition: $animate;
   transition-duration: 0.3s;
@@ -488,8 +490,22 @@ h3 {
 #mail-icon,
 #location-icon
 {
-  fill: #fff;
   margin: 1rem 2rem;
   height: 32px;
   width: 32px;
+}
+
+.fill-w {
+  fill: #fff;
+}
+
+
+
+/////////////////////// 
+/////////////////////// 
+/// CONTACT PAGE //////
+
+.bw {
+  background-color: #fff;
+  color: #000;
 }

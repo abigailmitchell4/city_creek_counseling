@@ -13,11 +13,11 @@
   <body>
     <nav class='menu'>
       <ul>
-        <li><a href='index.html' id='home-btn'class=''>
-            <svg id='home-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <title>home</title>
-              <path d="M12 3c0 0-6.186 5.34-9.643 8.232-0.203 0.184-0.357 0.452-0.357 0.768 0 0.553 0.447 1 1 1h2v7c0 0.553 0.447 1 1 1h3c0.553 0 1-0.448 1-1v-4h4v4c0 0.552 0.447 1 1 1h3c0.553 0 1-0.447 1-1v-7h2c0.553 0 1-0.447 1-1 0-0.316-0.154-0.584-0.383-0.768-3.433-2.892-9.617-8.232-9.617-8.232z"></path>
-              </svg>
+        <li><a href='index.html' id='home-btn'>
+          <svg id='home-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <title>home</title>
+            <path d="M12 3c0 0-6.186 5.34-9.643 8.232-0.203 0.184-0.357 0.452-0.357 0.768 0 0.553 0.447 1 1 1h2v7c0 0.553 0.447 1 1 1h3c0.553 0 1-0.448 1-1v-4h4v4c0 0.552 0.447 1 1 1h3c0.553 0 1-0.447 1-1v-7h2c0.553 0 1-0.447 1-1 0-0.316-0.154-0.584-0.383-0.768-3.433-2.892-9.617-8.232-9.617-8.232z"></path>
+          </svg>
         </a></li>
         <li><a href='about.html' id='info-btn' class='hover underline'>About</a></li>
         <li><a href='' id='info-btn' class='hover underline'>Men Healing</a></li>
@@ -49,7 +49,9 @@
       <div class='main-home-container flex-c'>
         <h1>City Creek Counseling</h1>
         <div class='intro-p flex-c g padding'>
-          <h2>Welcome</h2>
+          <div class='heading-width'>
+            <h2>Welcome</h2>
+          </div>
           <div class='p-container flex-c p-border'>
             <p class='ph-1'>City Creek Counseling | Salt Lake City, Utah
             </p>
@@ -61,8 +63,8 @@
             </p>
           </div>
         </div>
-        <div class='welcome-container flex-c'>
-          <div class='header-container'>
+        <div class='welcome-container flex-c gray'>
+          <div class='heading-width h-margin'>
             <h2 class='who-header'>Who I am</h2>
           </div>
           <div class='flex-r width-90'>
@@ -83,8 +85,8 @@
               </div>
             </div>
             <div class='image-container flex-c'>
-              <img src='images/Diana-photo1.jpg'/>
-              <button class='learn-btn g'>
+              <img id='diana-img'src='images/Diana-photo1.jpg'/>
+              <button class='learn-btn g2 g2-btn'>
                 <a href='about.html'>Learn More About Me</a>
               </button>
             </div>
@@ -92,10 +94,11 @@
         </div>
 
         <div class='main-contact-container flex-c'>
-          <h2 class='in-touch-header' id='contact-header'>Get in Touch</h2>
+          <div class='heading-width'>
+            <h2 class='in-touch-header'>Get in Touch</h2>
+          </div>
           <div class=' contact-container flex-r flex-l width-sm'>
               <div class='intro-p flex-c flex-l'>
-                <!-- <p class='p-1'>Contact me though</p> -->
                 <div class='contact flex-l flex-r'>
                   <div class='contact-meta flex-c flex-l margin-top-1'>
                     <div class='flex-r'>
@@ -109,13 +112,13 @@
                         <svg class='fill-w' id='mail-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                           <title>envelope</title>
                           <path d="M16.015 18.861l-4.072-3.343-8.862 10.463h25.876l-8.863-10.567-4.079 3.447zM29.926 6.019h-27.815l13.908 11.698 13.907-11.698zM20.705 14.887l9.291 11.084v-18.952l-9.291 7.868zM2.004 7.019v18.952l9.291-11.084-9.291-7.868z"></path>
-                          </svg>
+                        </svg>
                       <p>diana@citycreekcounseling.com</p>  
                   </div>
                   </div> 
-                  <button class='contact-btn b2'>
-                      <a href="mailto:diana@citycreekcounseling.com?Subject=Consultation Inquiry" target="_top">Contact</a>
-                    </button>
+                  <button class='contact-btn b b-btn'>
+                    <a href="mailto:diana@citycreekcounseling.com?Subject=Consultation Inquiry" target="_top">Contact</a>
+                  </button>
                 </div>             
                 <div class='flex-l margin-top-1'>
                   <div class='flex-r'>
@@ -133,7 +136,6 @@
               </div>
           </div>
         </div>
-
       </div>
     </main>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

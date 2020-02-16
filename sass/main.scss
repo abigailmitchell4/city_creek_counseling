@@ -1,3 +1,8 @@
+:root {
+--gary-main: #5e5e5e;
+
+}
+
 // MEDIA QUERY MANAGER
 @mixin respond($breakpoint) {
   @if $breakpoint == phone-small {
@@ -67,28 +72,83 @@ main {
 
 /////////////////////
 // GENERAL CLASSES //
-.b {
+.b,
+.b-btn {
   background-color: #11909e;
   color: #fff;
 }
-.b2 {
+.b-btn:hover {
+  border-color: #11909e;
+  background-color: #fff;
+  transition: $animate;
+  transition-duration: 0.3s;
+
+  a {
+    color: #11909e;
+  }
+}
+
+
+.b2,
+.b2-btn {
   color: #0f919e;
   background-color: #fff;
 }
-.g {
+.b2-btn:hover {
+  border-color: #fff;
+  background-color: #11909e;
+  transition: $animate;
+  transition-duration: 0.3s;
+
+  a {
+    color: #fff;
+  }
+}
+
+.g,
+.g-btn {
   background-color: #90baac;
   color: #fff;
 }
-.g2 {
+.g-btn:hover {
+  border-color: #90baac;
+  background-color: #fff;
+  transition: $animate;
+  transition-duration: 0.3s;
+
+  a {
+    color: #90baac;
+  }
+}
+
+.g2,
+.g2-btn {
+  background-color: #fff;
   color: #90baac;
   fill: #90baac;
+}
+
+.g2-btn:hover {
+  border-color: #fff;
+  background-color: #90baac;
+  transition: $animate;
+  transition-duration: 0.3s;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+}
+
+
+.gray {
+  color: var(--gary-main);
 }
 .margin-top-1 {
   margin: 1rem 0;
 }
 .width-90 {
   width: 90%;
-  color: #4f4f4f;
   max-width: 1200px;
 }
 .width-sm {
@@ -135,7 +195,7 @@ li a {
   text-decoration: none;
 
   @include respond(phone) {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 }
 a:link {
@@ -163,10 +223,10 @@ a:visited {
     position: absolute;
     bottom: -10px;
     width: 0px;
-    height: 2px;
+    height: 1px;
     margin: 5px 0 0;
     transition: $animate;
-    transition-duration: 0.4s;
+    transition-duration: 0.3s;
     opacity: 0;
     background-color: #0f919e;
   }
@@ -213,6 +273,7 @@ a:visited {
       font-weight: 400;
       color: #0f919e;
       background-color: inherit;
+      border-style: solid;
     }
   }
 }
@@ -228,12 +289,13 @@ a:visited {
     justify-content: space-around;
     height: 100%;
     padding: 1rem;
+    font-weight: 300;
   }
 }
 .close:after {
   content: '';
-  height: 60px;
-  border-left: 2px solid gray;
+  height: 40px;
+  border-left: 1px solid var(--gary-main);
   position: absolute;
   transform: rotate(45deg);
   right: 28px;
@@ -242,8 +304,8 @@ a:visited {
 
 .close:before {
   content: '';
-  height: 60px;
-  border-left: 2px solid gray;
+  height: 40px;
+  border-left: 1px solid var(--gary-main);
   position: absolute;
   transform: rotate(-45deg);
   right: 28px;
@@ -273,15 +335,24 @@ h1 {
     font-size: 7rem;
   }
   @include respond(tab-land) {
-    font-size: 4rem;
+    font-size: 5.5rem;
   }
   @include respond(tab-port) {
+    font-size: 4.5rem;
+    margin: 5rem 0;
+  }
+  @include respond(phone) {
     font-size: 4rem;
     margin: 5rem 0;
   }
 }
-h2 {
+.heading-width {
   width: 300px;
+  display: flex;
+  justify-content: center;
+}
+h2 {
+  width: 100%;
 }
 h2, 
 button {
@@ -294,7 +365,7 @@ button,
   letter-spacing: 2px;
   margin: 2rem 0;
   text-align: center;
-  font-weight: 200;
+  font-weight: 300;
   border-bottom-style: solid;
   padding: 10px 20px;
   border-width: 1px;
@@ -327,7 +398,7 @@ h3 {
   }
   .p-container {
     width: 60%;
-    margin-bottom: 2rem;
+    margin: 2rem 0 3rem;
 
     @include respond(tab-small) {
       width: 85%;
@@ -353,14 +424,12 @@ h3 {
   }
 }
 
-.header-container {
-  display: flex;
-  align-items: center;
+.h-margin {
   margin: 3rem 0 1rem;
 }
 .who-header {
   margin: 0 1rem;
-  color: #4f4f4f;
+  color: var(--gary-main);
 }
 .hello-container {
   align-items: flex-start;
@@ -368,30 +437,12 @@ h3 {
 }
 
 .image-container {
-  margin:3rem;
+  margin: 3rem;
+}
+#diana-img {
+  width: 100%
 }
 
-.learn-btn {
-  font-size: 1.2rem;
-  width: 200px;
-  border-color: transparent;
-}
-.learn-btn {
-  a, 
-  a:visited {
-    color: #fff;
-  }
-}
-.learn-btn:hover {
-  border-color: transparent;
-  background-color: #fff;
-  transition: $animate;
-  transition-duration: 0.3s;
-
-  a {
-    color: #90baac;
-  }
-}
 
 
 //////////////////
@@ -444,14 +495,19 @@ h3 {
 }
 .contact-meta {
   margin-right: 1rem;
+
+  @include respond(tab-small) {
+    margin: 0;
+  }
 }
 
-.contact-btn {
+.contact-btn,
+.learn-btn {
   height: fit-content;
-  font-size: 1.5rem;
   border-color: inherit;
   align-self: center;
-  margin: 1rem;
+  font-size: 1.3rem;
+  width: 200px;
 
   a,
   a:visited {
@@ -460,19 +516,13 @@ h3 {
 
   @include respond(tab-small) {
     margin-bottom: 2rem;
+    display: flex;
   }
 }
-
-.contact-btn:hover {
-  border-color: transparent;
-  background-color: #11909e;
-  transition: $animate;
-  transition-duration: 0.3s;
-
-  a {
-    color: #fff;
-  }
+.contact-btn {
+  margin: 2rem 1rem 3rem;
 }
+
 .location {
   margin: 1rem 0;
   align-items: flex-start;
@@ -499,7 +549,6 @@ h3 {
 /////////////////////// 
 /// CONTACT PAGE //////
 
-.bw {
+.w {
   background-color: #fff;
-  color: #000;
 }

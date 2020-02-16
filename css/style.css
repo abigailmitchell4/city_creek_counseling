@@ -32,19 +32,21 @@ main {
   align-items: flex-start;
   width: 100%; }
 
+.b {
+  background-color: #11909e;
+  color: #fff; }
+
 .b2 {
-  color: #0f919e; }
+  color: #0f919e;
+  background-color: #fff; }
 
 .g {
   background-color: #90baac;
   color: #fff; }
 
 .g2 {
-  color: #90baac; }
-
-.b {
-  background-color: #11909e;
-  color: white; }
+  color: #90baac;
+  fill: #90baac; }
 
 .margin-top-1 {
   margin: 1rem 0; }
@@ -207,6 +209,9 @@ h1 {
       font-size: 4rem;
       margin: 5rem 0; } }
 
+h2 {
+  width: 300px; }
+
 h2,
 button {
   font-size: 2rem; }
@@ -219,10 +224,9 @@ button,
   margin: 2rem 0;
   text-align: center;
   font-weight: 200;
-  border-style: solid;
-  width: fit-content;
+  border-bottom-style: solid;
   padding: 10px 20px;
-  border-width: 2px; }
+  border-width: 1px; }
   @media (max-width: 750px) {
     h2,
     button,
@@ -241,22 +245,8 @@ h3 {
   line-height: 1.5;
   letter-spacing: 1px;
   width: 100%;
-  font-weight: 300; }
-  @media (max-width: 1800px) {
-    .intro-p {
-      font-size: 1.4rem; } }
-  @media (max-width: 1200px) {
-    .intro-p {
-      font-size: 1.3rem; } }
-  @media (max-width: 900px) {
-    .intro-p {
-      font-size: 1.5rem; } }
-  @media (max-width: 600px) {
-    .intro-p {
-      font-size: 1.5rem; } }
-  @media (max-width: 350px) {
-    .intro-p {
-      font-size: 1.2rem; } }
+  font-weight: 300;
+  font-size: 1.2rem; }
   .intro-p .ph-1 {
     margin: 1rem 3rem;
     text-align: center; }
@@ -315,7 +305,7 @@ h3 {
   margin: 5rem; }
 
 .in-touch-header {
-  margin-top: 3rem; }
+  margin-top: 6rem; }
   @media (max-width: 750px) {
     .in-touch-header {
       margin-top: 4rem; } }
@@ -327,7 +317,8 @@ h3 {
   color: white; }
 
 .contact-container {
-  margin: 2rem; }
+  margin: 2rem;
+  max-width: 700px; }
   .contact-container p {
     margin: 1rem 0; }
 
@@ -359,11 +350,11 @@ h3 {
 
 .contact-btn:hover {
   border-color: transparent;
-  background-color: #fff;
+  background-color: #11909e;
   transition: all 0.1s ease-in-out;
   transition-duration: 0.3s; }
   .contact-btn:hover a {
-    color: #11909e; }
+    color: #fff; }
 
 .location {
   margin: 1rem 0;

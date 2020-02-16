@@ -11,36 +11,69 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+      <nav class='menu'>
+          <ul>
+            <li><a href='index.html' id='home-btn'class=''>
+                <svg id='home-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <title>home</title>
+                  <path d="M12 3c0 0-6.186 5.34-9.643 8.232-0.203 0.184-0.357 0.452-0.357 0.768 0 0.553 0.447 1 1 1h2v7c0 0.553 0.447 1 1 1h3c0.553 0 1-0.448 1-1v-4h4v4c0 0.552 0.447 1 1 1h3c0.553 0 1-0.447 1-1v-7h2c0.553 0 1-0.447 1-1 0-0.316-0.154-0.584-0.383-0.768-3.433-2.892-9.617-8.232-9.617-8.232z"></path>
+                  </svg>
+            </a></li>
+            <li><a href='about.html' id='info-btn' class='hover underline'>About</a></li>
+            <li><a href='' id='info-btn' class='hover underline'>Men Healing</a></li>
+            <li><a href='' id='info-btn' class='hover underline'>Inspirations</a></li>
+            <li><a href='contact.html' id='contact-btn'class='hover underline'>Contact</a></li>
+          </ul>
+        </nav>
     
+        <div class='menu-mobile'>
+            <a id='menu-btn'>Menu</a>
+            <div class='nav-menu-mobile'>
+              <div class='close'></div>
+              <ul>
+                <li><a href='index.html' id='home-btn'class=''>
+                    <svg id='home-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <title>home</title>
+                      <path d="M12 3c0 0-6.186 5.34-9.643 8.232-0.203 0.184-0.357 0.452-0.357 0.768 0 0.553 0.447 1 1 1h2v7c0 0.553 0.447 1 1 1h3c0.553 0 1-0.448 1-1v-4h4v4c0 0.552 0.447 1 1 1h3c0.553 0 1-0.447 1-1v-7h2c0.553 0 1-0.447 1-1 0-0.316-0.154-0.584-0.383-0.768-3.433-2.892-9.617-8.232-9.617-8.232z"></path>
+                      </svg>
+                </a></li>
+                <li><a href='about.html' id='info-btn' class='hover underline'>About</a></li>
+                <li><a href='' id='info-btn' class='hover underline'>Men Healing</a></li>
+                <li><a href='' id='info-btn' class='hover underline'>Inspirations</a></li>
+                <li><a href='contact.html' id='contact-btn'class='hover underline'>Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
       <div class='main-contact-container flex-c bw'>
           <h2 class='in-touch-header' id='contact-header'>Get in Touch</h2>
           <div class=' contact-container flex-r flex-l width-sm'>
               <div class='intro-p flex-c flex-l'>
+                <p class='p-1 g2'>If you are interested in getting started and scheduling a consultation, please reach out through one of the below channels.</p>
                 <div class='contact flex-l flex-r'>
                   <div class='contact-meta flex-c flex-l margin-top-1'>
-                    <p class='p-1'>To contact us, please reach out through one of the below channels.</p>
                     <div class='flex-r'>
-                        <svg class='bw' id='phone-icon'version="1.1" xmlns="http://www.w3.org/2000/svg" >
+                        <svg class='g2' id='phone-icon'version="1.1" xmlns="http://www.w3.org/2000/svg" >
                           <title>phone</title>
                           <path d="M22 20c-2 2-2 4-4 4s-4-2-6-4-4-4-4-6 2-2 4-4-4-8-6-8-6 6-6 6c0 4 4.109 12.109 8 16s12 8 16 8c0 0 6-4 6-6s-6-8-8-6z"></path>
                           </svg>
                       <p>801-505-3696</p>
                     </div>
                     <div class='flex-r'>
-                        <svg class='bw' id='mail-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <svg class='g2' id='mail-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                           <title>envelope</title>
                           <path d="M16.015 18.861l-4.072-3.343-8.862 10.463h25.876l-8.863-10.567-4.079 3.447zM29.926 6.019h-27.815l13.908 11.698 13.907-11.698zM20.705 14.887l9.291 11.084v-18.952l-9.291 7.868zM2.004 7.019v18.952l9.291-11.084-9.291-7.868z"></path>
                           </svg>
                       <p>diana@citycreekcounseling.com</p>  
-                  </div>
+                    </div>
                   </div> 
-                  <button class='contact-btn g'>
+                  <button class='learn-btn g'>
                       <a href="mailto:diana@citycreekcounseling.com?Subject=Consultation Inquiry" target="_top">Contact</a>
                     </button>
                 </div>             
                 <div class='flex-l margin-top-1'>
                   <div class='flex-r'>
-                    <svg class='bw' id='location-icon' version="1.1" xmlns="http://www.w3.org/2000/svg"width="32" height="32" viewBox="0 0 32 32">
+                    <svg class='g2' id='location-icon' version="1.1" xmlns="http://www.w3.org/2000/svg"width="32" height="32" viewBox="0 0 32 32">
                       <title>location</title>
                       <path d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z"></path>
                       </svg>

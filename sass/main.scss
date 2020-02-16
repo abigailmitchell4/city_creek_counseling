@@ -67,8 +67,13 @@ main {
 
 /////////////////////
 // GENERAL CLASSES //
+.b {
+  background-color: #11909e;
+  color: #fff;
+}
 .b2 {
   color: #0f919e;
+  background-color: #fff;
 }
 .g {
   background-color: #90baac;
@@ -76,10 +81,7 @@ main {
 }
 .g2 {
   color: #90baac;
-}
-.b {
-  background-color: #11909e;
-  color: white;
+  fill: #90baac;
 }
 .margin-top-1 {
   margin: 1rem 0;
@@ -278,7 +280,9 @@ h1 {
     margin: 5rem 0;
   }
 }
-
+h2 {
+  width: 300px;
+}
 h2, 
 button {
   font-size: 2rem;
@@ -291,10 +295,10 @@ button,
   margin: 2rem 0;
   text-align: center;
   font-weight: 200;
-  border-style: solid;
-  width: fit-content;
+  border-bottom-style: solid;
   padding: 10px 20px;
-  border-width: 2px;
+  border-width: 1px;
+
 
   @include respond(tab-small) {
     font-size: 2rem;
@@ -315,22 +319,8 @@ h3 {
   letter-spacing: 1px;
   width: 100%;
   font-weight: 300;
+  font-size: 1.2rem;
 
-  @include respond(big-desk) {
-    font-size: 1.4rem;
-  }
-  @include respond(tab-land) {
-    font-size: 1.3rem;
-  }
-  @include respond(tab-port) {
-    font-size: 1.5rem;
-  }
-  @include respond(phone) {
-    font-size: 1.5rem;
-  }
-  @include respond(phone-small) {
-    font-size: 1.2rem;
-  }
   .ph-1 {
     margin: 1rem 3rem;
     text-align: center;
@@ -415,7 +405,7 @@ h3 {
 ///// CONTACT /////
 
 .in-touch-header {
-  margin-top: 3rem;
+  margin-top: 6rem;
 
   @include respond(tab-small) {
     margin-top: 4rem;
@@ -430,7 +420,8 @@ h3 {
 }
 
 .contact-container { 
-  margin: 2rem; 
+  margin: 2rem;
+  max-width: 700px; 
 
   p {
     margin: 1rem 0;
@@ -470,15 +461,14 @@ h3 {
 
 .contact-btn:hover {
   border-color: transparent;
-  background-color: #fff;
+  background-color: #11909e;
   transition: $animate;
   transition-duration: 0.3s;
 
   a {
-    color: #11909e;
+    color: #fff;
   }
 }
-
 .location {
   margin: 1rem 0;
   align-items: flex-start;
